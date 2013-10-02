@@ -1,0 +1,22 @@
+{
+	"manifest_version" : 2,
+
+	"name" : "Right-click Hide",
+	"description" : "Adds an option to a user's right-click menu to hide the selected web element.",
+	"version" : "1.1",
+
+	// "default_locale" : "en",
+	
+	"content_scripts": [
+		{			
+			"matches": [ "http://*/*", "https://*/*" ],
+			"js": ["jquery-1.8.3.min.js", "rightClickContent.js"]
+		}
+	],
+	
+	"background" : {		
+		"persistent" : true,		
+		"scripts": ["rightClickHide.js"]
+	},
+	"permissions" : ["contextMenus", "http://*/", "https://*/"]
+}
